@@ -31,18 +31,32 @@ Feature: Login test suite
         When I click on the button with data-test "login-button"
         Then I check that the url include the endpoint "inventory.html"
 
+# En general están bien pero debes usar nombres para los tests y los steps más descriptivos, por ejemplo:
     Scenario: Accepted usernames
-        Given I search the usernames on the login page
+        Given I search the usernames on the login page 
+        # I check that all Accepted usernames appears in login page
 
-    Scenario: No username
+
+    Scenario: No username 
+              #Check error message with no user name
         Given I do not type a username
 
     Scenario: Valid username and no password
+           #Check error message with no user password
         Given I enter a valid username but no password
 
     Scenario: Invalid username with correct password
+           #Check error message with invalid username with correct password
         Given I enter an invalid username and a correct password
 
     Scenario: Login with locked out user
+            # Check error message with locked out user
         Given I try to login with a locked out user
 
+# Por otro lado recuerda reutilizar pasos y funciones existentes, como por ejemplo:
+# I type the user name {string} 
+# I type the password {string}
+# O directamente este paso que vale para escribir en ambos
+#I type in the text box with data test {string} the text {string} con este paso puedes poner el nombre de usuario y contraseña
+
+# En general buen trabajo Jonas, nos vemos mañana
