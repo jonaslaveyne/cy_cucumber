@@ -60,6 +60,7 @@ export class CommonPage {
         cy.get('body').should('not.contain', text)
     }
 
+    //for 'incomplete' functions it's better to use 'return' - a get element does not really do anything
     getElementByClass(elementByClass) {
         return cy.get(`[class="${elementByClass}"]`)
     }
