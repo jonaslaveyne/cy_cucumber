@@ -26,18 +26,29 @@ Given("I type in the text box with data test {string} the text {string}", (texBo
     commonPage.typeInTextBoxByDataTest(texBoxByDataText, text);
 });
 
-//Exercises steps
+// Ejercicios 25/03/2025
 
-Given("I check if the following text {string} is in the body of the page", (text) => {
-    commonPage.checkBodyContainsText(text);
-})
-
-Given("I check if the following text {string} is not in the body of the page", (text) => {
-    commonPage.checkBodyNotContainsText(text);
-})
-
-Given("I find an element by its class {string}", (elementByClass) => {
-    commonPage.getElementByClass(elementByClass);
+Given("I check that the element with data-test {string} contain the text {string}", (elementByDataTest, text) => {
+    commonPage.checkElementContains(elementByDataTest, text);
 });
 
+Given("I check that the element with data-test {string} should {string}", (elementByDataTest, assertion) => {
+    commonPage.checkElementBydataTest(elementByDataTest, assertion);
+});
 
+Given("I Check that the body should contain the text {string}", (text) => {
+    commonPage.checkBodyContainText(text);
+});
+
+Given("I Check that the body should not contain the text {string}", (text) => {
+    commonPage.checkBodyNotContainText(text);
+});
+
+Given("I Check that the body should {string} the text {string}", (assertion, text) => {
+    commonPage.checkBodyText(assertion, text);
+    //assertion can be "contain", "not.contain", "have.text", "not.have.text"
+});
+
+Given("I click on the element with data-test {string}", (elementDataTest) => {
+    commonPage.clickElementByDataTest(elementDataTest);
+});

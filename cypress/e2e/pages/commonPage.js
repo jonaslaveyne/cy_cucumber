@@ -65,4 +65,29 @@ export class CommonPage {
         return cy.get(`[class="${elementByClass}"]`)
     }
 
+    // Ejercicios 25/03/2025
+
+    checkElementBydataTest(elementDataTest, assertion) {
+        this.getElementByDataTest(elementDataTest).should(assertion)
+    }
+    checkBodyContainText(text) {
+        cy.get('body').should('contain', text)
+    }
+
+    checkBodyNotContainText(text) {
+        cy.get('body').should('not.contain', text)
+    }
+
+    checkBodyText(assertion, text) {
+        cy.get('body').should(assertion, text)
+    }
+
+    getElementByClass(className) {
+        return cy.get(`[class = "${className}"]`)
+    }
+
+    getElementByAttribute(attribute, className) {
+        return cy.get(`[${attribute} = "${className}"]`)
+    }
+
 }
