@@ -14,7 +14,7 @@ Feature: Main test suite
         And I check that the url include the endpoint "cart.html"
         Then I check that the element with data-test "inventory-item-name" contain the text "Sauce Labs Backpack"
 
-    Scenario: Check product details then go back to products page
+    Scenario: Check product details then go back to products page without adding product to cart
         Given I check that the element with data-test "shopping-cart-badge" should "not.exist"
         When I click on the element with data-test "item-1-title-link"
         And I check that the url include the endpoint "inventory-item.html?id=1"
@@ -24,6 +24,7 @@ Feature: Main test suite
         Then I check that the element with data-test "shopping-cart-badge" should "not.exist"
 
     Scenario: Order products from cheapest to most expensive on the products page
+
 
 
 

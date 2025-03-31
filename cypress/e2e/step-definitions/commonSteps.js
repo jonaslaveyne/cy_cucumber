@@ -52,3 +52,11 @@ Given("I Check that the body should {string} the text {string}", (assertion, tex
 Given("I click on the element with data-test {string}", (elementDataTest) => {
     commonPage.clickElementByDataTest(elementDataTest);
 });
+
+Given('I test the accesibility in all the screen', () => {
+    commonPage.testAccesibilityInScreen()
+})
+
+Given('I test the accesibility on the element with locator {string}', (elementLocator) => {
+    commonPage.testAccesibilityOnElement(elementLocator)
+})

@@ -90,4 +90,20 @@ export class CommonPage {
         return cy.get(`[${attribute} = "${className}"]`)
     }
 
+    /// Función para testear accesibilidad
+    testAccesibilityInScreen() {
+        cy.injectAxe();
+        cy.checkA11y();
+    }
+
+    testAccesibilityOnElement(elementLocator) {
+        cy.injectAxe();
+        cy.checkA11y(elementLocator)
+    }
+
+    interceptHBOApiCall() {
+        cy.intercept('**/ot_guard_logo.svg').as('hboCookies')
+        cy.wait('@hboCookies', { timeout: 10000 })
+    }
+
 }
