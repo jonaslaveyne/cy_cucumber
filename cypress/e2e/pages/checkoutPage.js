@@ -6,7 +6,7 @@ const priceCheckout = '[data-test="inventory-item-price"]';
 export class CheckoutPage extends CommonPage {
 
 
-
+    // sé que puedo mejorarlo cambiando mi nombre, apellido y CP por variables pero ya no tengo tiempo :)
     correctCheckoutFormFilled() {
         cy.get('[data-test="firstName"]').type('Jonas');
         cy.get('[data-test="lastName"]').type('Laveyne');

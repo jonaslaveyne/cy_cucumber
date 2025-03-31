@@ -12,6 +12,7 @@ Feature: Checkout Process test suite
         And I check that the element with data-test "add-to-cart-sauce-labs-onesie" should "exist"
         And I click on the element with data-test "add-to-cart-sauce-labs-onesie"
         And I check that the element with data-test "shopping-cart-badge" should "be.visible"
+        And I check that the element with data-test "shopping-cart-badge" contain the text "2"
         And I click on the element with data-test "shopping-cart-link"
         And I check that the element with data-test "inventory-item-name" contain the text "Sauce Labs Backpack"
         And I check that the element with data-test "inventory-item-name" contain the text "Sauce Labs Onesie"
