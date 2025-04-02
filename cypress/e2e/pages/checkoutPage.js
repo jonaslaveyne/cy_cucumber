@@ -17,7 +17,7 @@ export class CheckoutPage extends CommonPage {
     }
 
     checkPriceOnCheckout(productNameCheckout, productPriceCheckout) {
-        cy.get(productCardCheckout).contains(productNameCheckout).find(priceCheckout).should('contain', productPriceCheckout);
+        cy.contains(productCardCheckout, productNameCheckout).should('contain', productPriceCheckout);
     }
 
 }

@@ -24,4 +24,8 @@ module.exports = defineConfig({
     añade la ruta con la extensión separada con una , todo dentro de []
     */
   },
+  env: {
+    snapshotOnly: true,
+    requestMode: true
+  },
 });
