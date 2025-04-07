@@ -1,4 +1,3 @@
-@smoke
 Feature: Checkout Process test suite
 
     Background:
