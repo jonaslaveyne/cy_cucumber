@@ -1,4 +1,4 @@
-@smoke
+@smoke @main
 Feature: Main test suite
 
     Background:
