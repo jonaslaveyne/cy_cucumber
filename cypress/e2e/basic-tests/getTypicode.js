@@ -114,12 +114,37 @@ describe('Use GET method to get data from typicode', () => {
         })
     })
 
-    it.only('GET on typicode.com check status in response and some body properties with should in todos/1', () => {
+    it('GET on typicode.com check status in response and some body properties with should in todos/1', () => {
         cy.request('https://jsonplaceholder.typicode.com/todos/1').should((response) => {
             expect(response.status).to.eq(200);
             expect(response.body).to.have.property('title', 'delectus aut autem');
             expect(response.body).to.have.property('completed').that.is.a('boolean');
             expect(response.body).to.include.all.keys(["userId", "id", "title", "completed"]);
+            expect(response.body).to.deep.equal(
+                {
+                    "userId": 1,
+                    "id": 1,
+                    "title": "delectus aut autem",
+                    "completed": false
+                }
+            )
+        })
+    })
+
+    it('GET on api.restful-api.dev check response is correct on object 1', () => {
+        cy.request('https://api.restful-api.dev/objects/1').should((response) => {
+            expect(response.status).to.eq(200);
+            expect(response.body['id']).to.be.a('number').eq(1);
+            expect(response.body['name']).to.be.a('string').eq('Google Pixel 6 Pro');
+            // expect(response.body).not.to.be.a('number');
+            // expect(response.body).to.have.length(200);
+            // expect(response.body['title']).be.a('string').eq(
+            //     'sunt aut facere repellat provident occaecati excepturi optio reprehenderit'
+            //   );
+            //   expect(response.body['userId']).be.a('number').to.eq(1);
+            //   expect(response.body['body']).to.be.a('string').to.contain(
+            //     'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto'
+            //   );
         })
     })
 
