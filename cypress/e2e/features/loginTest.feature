@@ -1,6 +1,6 @@
 #Para comentar en un archivo .feature se hace con este símbolo #
 #Esto es la descripción de la batería de test contenida en este archivo
-@smoke
+@smoke @login
 Feature: Login test suite
 
     Background:
