@@ -1,4 +1,4 @@
-@smoke @main
+@smoke @main @regression
 Feature: Main test suite
 
     Background:

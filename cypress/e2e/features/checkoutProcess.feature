@@ -1,3 +1,4 @@
+@regression
 Feature: Checkout Process test suite
 
     Background:
