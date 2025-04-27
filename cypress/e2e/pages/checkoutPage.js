@@ -19,7 +19,13 @@ export class CheckoutPage extends CommonPage {
     checkPriceOnCheckout(productNameCheckout, productPriceCheckout) {
         cy.contains(productCardCheckout, productNameCheckout).should('contain', productPriceCheckout);
     }
-
+// El problema con la funcion checkPriceOnCheckout es que el contains te muee a donde está el texto, por eso no encuentras el precio, si la cambias así funcionará
+/*
+    checkPriceOnCheckout(productNameCheckout, productPriceCheckout) {
+        cy.contains(productCardCheckout, productNameCheckout).should('contain', productPriceCheckout);
+    }
+    */
+    
 }
 
 
